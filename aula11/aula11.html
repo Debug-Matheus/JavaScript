@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Condições - DETRAN</title>
+    <style>
+        span{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <H1>Sistema de Multas</H1>
+    <label for="vel"> Velocidade do carro:</label>
+    <input type="number" name="vel" id="ivel"> <span>Km/h</span>
+    <input type="button" value="Verificar" onclick="calcular()">
+    <div id="res">Alerta:</div>
+   
+    <script>
+        function calcular(){
+            var txtv = window.document.getElementById('ivel')
+            var vel = Number(txtv.value)
+            var km = window.document.getElementsByTagName('span')
+            var res = window.document.getElementById('res')
+            res.innerHTML = `<p>Sua velocidade atual e de <strong>${vel}Km/h</strong></p>`
+            if (vel> 60){
+                // window.alert('Voce ultrapassou a velocidade permitida. MULTADO!')
+                res.innerHTML += `<p>Voce ultrapassou a velocidade permitida. MULTADO!</p>`
+                
+            }else{
+                // window.alert('Dirija sempre usando cinto de seguranca!')
+                res.innerHTML += `<p>Voce esta na velocidade permitida!</p>`
+            }
+            res.innerHTML += `<p>Dirija sempre usando cinto de seguranca!</p>`
+            km.style.display = 'inline'
+        }
+    </script>
+</body>
+</html>
