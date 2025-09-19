@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+
+</head>
+<body>
+    <div class="box">
+
+    </div>
+    <header>
+        <h1>Verificador de Idade</h1>
+    </header>
+    <main class="container">
+        <div class="item">
+            <label for="inasc">Ano de Nascimento:
+                <input type="number" name="nasc" id="inasc">
+            </label>
+        </div>
+        <div class="item">
+            <label for="">Sexo:</label>
+            <input type="radio" name="sexo" id="isexo" value="M" checked> Masculino
+            <input type="radio" name="sexo" id="isexo" value="F"> Feminino
+        </div>
+        <div class="item">
+            <input type="button" value="Verificar" onclick="verificar()">
+        </div>
+        <div class="item" id="res">
+            Preencha os dados acima para ver o resultado
+            
+        </div>
+        <div id="foto"></div>
+    </main>
+    <div class="rodape">
+        <a href="https://www.cursoemvideo.com" target="_blank">©CursoemVideo</a>
+    </div>
+    <script>
+        var nasc = window.document.getElementById('inasc')
+        var sexo = window.document.getElementsByName('sexo')
+        var res = window.document.getElementById('res')
+        var foto = window.document.getElementById('foto')
+        function verificar(){
+            var atual = new Date().getFullYear()
+            idade = Number(atual) - Number(nasc.value)
+            if(sexo[0].checked && idade <=12){
+                res.innerHTML = `Detectamos um menino com ${idade} anos.`
+                res.style.textAlign = 'center'
+                foto.style.display = 'block'
+                foto.style.backgroundImage = 'url(images/criancamas.jpg)'
+                foto.style.margin = 'auto'
+                foto.style.marginBottom = '10px'
+            }else if (sexo[0].checked && idade <= 20){
+                res.innerHTML = `Detectamos um adolescente com ${idade} anos.`
+                res.style.textAlign = 'center'
+                foto.style.display = 'block'
+                foto.style.backgroundImage = 'url(images/adolesmas.jpeg)'
+                foto.style.margin = 'auto'
+                foto.style.marginBottom = '10px'
+            }else if (sexo[0].checked && idade <= 50){
+                res.innerHTML = `Detectamos um homem com ${idade} anos.`
+                res.style.textAlign = 'center'
+                foto.style.display = 'block'
+                foto.style.backgroundImage = 'url(images/adultomas.jpg)'
+                foto.style.margin = 'auto'
+                foto.style.marginBottom = '10px'
+            }else if (sexo[0].checked && idade > 50){
+                res.innerHTML = `Detectamos um idoso com ${idade} anos.`
+                res.style.textAlign = 'center'
+                foto.style.display = 'block'
+                foto.style.backgroundImage = 'url(images/idosomas.jpg)'
+                foto.style.margin = 'auto'
+                foto.style.marginBottom = '10px'
+            }else if (sexo[1].checked && idade <= 12){
+                res.innerHTML = `Detectamos uma menina com ${idade} anos.`
+                res.style.textAlign = 'center'
+                foto.style.display = 'block'
+                foto.style.backgroundImage = 'url(images/criancafem.jpg)'
+                foto.style.margin = 'auto'
+                foto.style.marginBottom = '10px'
+            }else if (sexo[1].checked && idade <= 20){
+                res.innerHTML = `Detectamos uma adolescente com ${idade} anos.`
+                res.style.textAlign = 'center'
+                foto.style.display = 'block'
+                foto.style.backgroundImage = 'url(images/adolesfem.jpg)'
+                foto.style.margin = 'auto'
+                foto.style.marginBottom = '10px'
+            }else if (sexo[1].checked && idade <= 50){
+                res.innerHTML = `Detectamos uma mulher com ${idade} anos.`
+                res.style.textAlign = 'center'
+                foto.style.display = 'block'
+                foto.style.backgroundImage = 'url(images/adultofem.jpg)'
+                foto.style.margin = 'auto'
+                foto.style.marginBottom = '10px'
+            }else if (sexo[1].checked && idade > 50){
+                res.innerHTML = `Detectamos uma idosa com ${idade} anos.`
+                res.style.textAlign = 'center'
+                foto.style.display = 'block'
+                foto.style.backgroundImage = 'url(images/idosofem.jpg)'
+                foto.style.margin = 'auto'
+                foto.style.marginBottom = '10px'
+            }  
+        }    
+                
+        
+        
+
+    </script>
+</body>
+</html>

@@ -21,13 +21,13 @@
         </section>
     </main>
     <div class="rodape">
-        <a href="">©CursoemVideo</a>
+        <a href="https://www.cursoemvideo.com" target="_blank">©CursoemVideo</a>
     </div>
     <script>
         var padrao = document.querySelector('section.foto')
         var frases = document.querySelector('p') 
         function atualizarHora(){
-            var hora = 21
+            var hora = new Date().getHours()
             var min = new Date().getMinutes()
             var seg = new Date().getSeconds()
              document.body.classList.remove("manha", "tarde", "noite");
@@ -45,18 +45,18 @@
 
             if (hora < 12){
                 padrao.style.backgroundImage = 'url(images/dia.jpg)'
-                frases.innerHTML = 'Agora são ' + hora + ':' + min + ':' + seg + ', bom dia!'
+                frases.innerHTML = 'Agora são ' + hora + ':' + min + ':' + seg + ', BOM DIA!'
                 document.body.classList.add("manha");
                 document.getElementsByClassName('box')[0].style.backgroundImage = 'linear-gradient(to top, #ffe6806e 0%, #87cefadc 100%)'
             }else if(hora <= 18){
                 padrao.style.backgroundImage = 'url(images/tarde.jpg)'
-                frases.innerHTML = 'Agora são ' + hora + ':' + min + ':' + seg + ', boa tarde!'
+                frases.innerHTML = 'Agora são ' + hora + ':' + min + ':' + seg + ', BOA TARDE!'
                 
                 document.body.classList.add("tarde");
                 document.getElementsByClassName('box')[0].style.backgroundImage = 'linear-gradient(to top, #ffa600a2 0%, #87CEEB 100%)'
             }else{
                 padrao.style.backgroundImage = 'url(images/noite.jpg)'
-                frases.innerHTML = 'Agora são ' + hora + ':' + min + ':' + seg + ', boa noite!'
+                frases.innerHTML = 'Agora são ' + hora + ':' + min + ':' + seg + ', BOA NOITE!'
                 document.body.classList.add("noite");
                 document.body.style.backgroundImage = 'linear-gradient(to top, #2c003e 0%, #000000 100%)'
                  document.getElementsByClassName('box')[0].style.backgroundImage = 'linear-gradient(to top, #2c003e91 0%, #87cefab4 100%)'
