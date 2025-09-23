@@ -45,6 +45,10 @@
         function verificar(){
             var atual = new Date().getFullYear()
             idade = Number(atual) - Number(nasc.value)
+            if (Number(nasc.value.length == 0) || Number(nasc.value > atual)){
+                window.alert('[ERRO] Verifique os dados e tente novamente!')
+                return;
+            }
             if(sexo[0].checked && idade <=12){
                 res.innerHTML = `Detectamos um menino com ${idade} anos.`
                 res.style.textAlign = 'center'
@@ -101,11 +105,8 @@
                 foto.style.backgroundImage = 'url(images/idosofem.jpg)'
                 foto.style.margin = 'auto'
                 foto.style.marginBottom = '10px'
-            }  
+            }
         }    
-                
-        
-        
 
     </script>
 </body>

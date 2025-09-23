@@ -1,0 +1,72 @@
+@charset "UTF-8";
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+body{
+    background-color: rgb(68, 125, 199);
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 18px;
+    font-weight: normal;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+}
+main{
+    background-color: white;
+    width: 300px;
+    height: 300px;
+    border-radius: 10px;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.452);
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+}
+.login > label{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    font-weight: bold;
+    color: black; 
+}
+div.login{
+    margin: 10px;
+    width: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+}
+div.button{
+    margin: 10px;
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+}
+input[type="button"]{    
+    width: 100px;
+    height: 30px;
+    border-radius: 5px;
+    border: none;
+    background-color: rgb(68, 125, 199);
+    color: white;
+    font-weight: bold;
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+}
+input[type="button"]:hover{
+    background-color: rgb(0, 0, 0);
+}
+div.reset{
+    display: none;
+}
