@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+
+</head>
+<body onload="atualizarHora()">
+    <header>
+        <h1>Vamos contar</h1>
+    </header>
+    <main class="container">
+        <div class="escolha">
+            <label for="iinicio">Início:</label>
+            <input type="number" name="inicio" id="iinicio">
+        </div>
+        <div class="escolha">
+            <label for="ifim">Fim:</label>
+            <input type="number" name="fim" id="ifim">
+        </div>
+        <div class="escolha">
+            <label for="istep">Passo:</label>
+            <input type="number" name="passo" id="istep">
+        </div>
+        <div class="escolha">
+            <input type="button" value="Contar" onclick="contar()" id="btncontar">
+        </div>
+        <div id="res">
+            
+        </div>
+    </main>
+    <div class="rodape">
+        <a href="https://www.cursoemvideo.com" target="_blank">©CursoemVideo</a>
+    </div>
+    <script>
+        function contar(){
+            var inicio = document.getElementById('iinicio')
+            var fim = document.getElementById('ifim')
+            var passo = document.getElementById('istep')
+            var btncontar = document.getElementById('btncontar')
+            var res = document.getElementById('res')
+
+            if(inicio.value === "" || fim.value === "" || passo.value ===""){
+                window.alert("[Error] Faltando dados")
+                return
+            }
+            
+            var i = Number(inicio.value);
+            var f = Number(fim.value);
+            var p = Number(passo.value);
+            if (p <=0){
+                window.alert("O passo precisa ser no minimo 1")
+                p = 1
+            }
+            res.innerHTML = "Contando: <br>"
+            if (i < f){
+                for(var c = i; c <= f; c += p){
+                    res.innerHTML += c + "👉"
+                    
+                    
+                }
+            }else{
+                for (var c = i; c>=f; c-=p){
+                    res.innerHTML += c + "👉"
+                    
+                }
+            }
+                
+            
+        }
+    </script>
+</body>
+</html>

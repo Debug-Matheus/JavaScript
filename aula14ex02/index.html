@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+
+</head>
+<body onload="atualizarHora()">
+    <header>
+        <h1>Tabuada</h1>
+    </header>
+    <main class="container">
+        <div class="item">
+            <label for="inumero">Número:</label>
+            <input type="number" name="numero" id="inumero">
+            <div class="item" id="gerar">
+            <input type="button" value="Gerar Tabuada" onclick="gerar()">
+        </div>
+        </div>
+        
+        <div class="item" id="teste">
+            <select name="gerado" id="igerado">
+                <option value="" id="tabu">Digite um número acima</option>
+            </select>
+        </div>
+    </main>
+    <div class="rodape">
+        <a href="https://www.cursoemvideo.com" target="_blank">©CursoemVideo</a>
+    </div>
+    <script>
+        function gerar(){
+            var num = document.getElementById('inumero')
+            var gerador = document.getElementById('igerado')
+            var n = Number(num.value)
+
+            gerador.innerHTML = ""
+            gerador.size = 10;
+            for(c = 0 ; c<= 10; c++){
+                var op = document.createElement('option')
+                op.innerText = n + ' x '+ c + ' = ' + (n*c)
+                gerador.appendChild(op);
+                
+            }
+            
+        }
+    </script>
+</body>
+</html>
