@@ -21,7 +21,7 @@
         </div>
         
         <div class="item" id="teste">
-            <select name="gerado" id="igerado">
+            <select name="gerado" id="igerado"size= 10>
                 <option value="" id="tabu">Digite um número acima</option>
             </select>
         </div>
@@ -34,12 +34,16 @@
             var num = document.getElementById('inumero')
             var gerador = document.getElementById('igerado')
             var n = Number(num.value)
-
+            if(n== ""){
+                window.alert('Por favor digite um número')
+                return
+            }
             gerador.innerHTML = ""
             gerador.size = 10;
             for(c = 0 ; c<= 10; c++){
                 var op = document.createElement('option')
                 op.innerText = n + ' x '+ c + ' = ' + (n*c)
+                op.value = `gerador${c}`
                 gerador.appendChild(op);
                 
             }
