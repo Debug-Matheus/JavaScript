@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+
+</head>
+<body onload="atualizarHora()">
+    <header>
+        <h1>Analisador de Números</h1>
+    
+    </header>
+    <main class="container">
+        <div class="item">
+            <label for="inumero">Número (entre 1 e 100): </label>
+            <input type="number" name="numero" id="inumero">
+            <div id="adicionar">
+                <input type="button" value="Adicionar" onclick="adicionar()">
+            </div>
+        </div>
+        <div class="item">
+            <select name="gerar" id="igerar" size="8">
+
+            </select>
+        </div>
+        <div id="finalizar">
+            <input type="button" value="Finalizar" onclick="finalizar()">
+            <input type="button" value="Atualizar" onclick="location.reload()">
+        </div>
+        <div id="res">
+
+        </div>
+        <div id="res2">
+
+        </div>
+        <div id="res3">
+
+        </div>
+        <div id="res4">
+
+        </div>
+        <div id="res5">
+
+        </div>
+    </main>
+    <div class="rodape">
+        <a href="https://www.cursoemvideo.com" target="_blank">©CursoemVideo</a>
+    </div>
+    <script>
+        
+        function adicionar(){
+            let num = document.getElementById('inumero')
+            let selec = document.getElementById('igerar')
+            let n = [Number(num.value)]
+            if(num.value.length ==0){
+                window.alert("Digite um número!")
+                return
+            }else if(num.value <= 0 || num.value > 100){
+                window.alert("Número precisa ser entre 1 e 100!")
+                return
+            }
+            for( let c = 0; c <selec.options.length; c++){
+                if(Number(selec.options[c].value) == n){
+                    window.alert("Valor invalido ou já encontrado na lista")
+                    return
+                }
+            }
+            let op = document.createElement('option')
+            op.value = n
+            op.innerText = `Valor ${n} adicionado.`
+            op.style.marginLeft = "5px"
+            op.style.padding = "1px"
+            selec.appendChild(op)
+            
+        }
+        function finalizar(){
+            
+            let resp = document.getElementById('res')
+            let resp2 = document.getElementById('res2')
+            let resp3 = document.getElementById('res3')
+            let resp4 = document.getElementById('res4')
+            let resp5 = document.getElementById('res5')
+            let selec = document.getElementById('igerar')
+            
+
+            if(selec.options.length === 0){
+                window.alert("Nenhum valor adicionado!")
+                return
+            }
+            let soma = 0
+            let maior = Number(selec.options[0].value)
+            let menor = Number(selec.options[0].value)
+            for(let cont = 0; cont < selec.options.length; cont++){
+                let valor = Number(selec.options[cont].value)
+                if(valor > maior){
+                    maior = valor
+                }else{
+                    menor = valor
+                }
+                soma += valor
+            }
+            let quant = selec.options.length
+            let media = soma / quant
+
+            resp.innerHTML = `O maior valor é ${maior}`
+            resp2.innerHTML = `O menor valor é ${menor}`
+            resp3.innerHTML = `Ao todo temos, ${quant} números cadastrados`
+            resp4.innerHTML = `A soma entre os valores é ${soma}`
+            resp5.innerHTML = `A media entre os valores é ${media}`
+
+        }
+
+    </script>
+</body>
+</html>
