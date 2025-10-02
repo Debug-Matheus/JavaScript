@@ -81,5 +81,3 @@ Aqui vou reunir anotações, exercícios e pequenos projetos feitos ao longo do 
 ## Créditos
 
 Curso gratuito disponibilizado pelo **[Curso em Vídeo](https://www.cursoemvideo.com/)** e ministrado pelo professor **Gustavo Guanabara**.
-Este repositório é apenas um espaço para registrar meu aprendizado.
-
